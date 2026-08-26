@@ -4,9 +4,25 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public StateMachine machine {  get; private set; }
+    public MenuState menuState;
+    public GameState gameState;
+    public GameOverState gameOverState;
+
     public int score;
 
     private void Awake()
+    {
+        SingletonSetup();
+        StateMachineSetup();
+    }
+
+    public void AddScore(int ammount)
+    {
+        score += ammount;
+    }
+
+    private void SingletonSetup()
     {
         if (instance != null && instance != this)
         {
@@ -17,8 +33,11 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    public void AddScore(int ammount)
+    private void StateMachineSetup()
     {
-        score += ammount;
+        machine = new StateMachine();
+        menuState = new MenuState(this);
+        gameState = new GameState(this);
+        gameOverState = new GameOverState(this);
     }
 }

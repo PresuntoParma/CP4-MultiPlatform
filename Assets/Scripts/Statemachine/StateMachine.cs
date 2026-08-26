@@ -16,4 +16,7 @@ public class StateMachine
         CurrentState = newState;
         CurrentState.Enter();
     }
+
+    public void Tick() => CurrentState?.Tick();
+    public void FixedTick() => CurrentState?.FixedTick();
 }
