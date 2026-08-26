@@ -484,6 +484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   score: 0
+  playing: 0
 --- !u!1 &1263093614
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,6 +576,7 @@ GameObject:
   - component: {fileID: 1687009031}
   - component: {fileID: 1687009030}
   - component: {fileID: 1687009029}
+  - component: {fileID: 1687009032}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -646,8 +648,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1140876025}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1687009032}
+        m_TargetAssemblyTypeName: MenuButtons, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
@@ -696,6 +698,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687009027}
   m_CullTransparentMesh: 1
+--- !u!114 &1687009032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687009027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 672f60fa22db37842adf0f43da654825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuButtons
 --- !u!1 &1698080281
 GameObject:
   m_ObjectHideFlags: 0

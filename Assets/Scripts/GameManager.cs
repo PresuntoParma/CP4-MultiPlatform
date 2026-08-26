@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -9,7 +10,11 @@ public class GameManager : MonoBehaviour
     public GameState gameState;
     public GameOverState gameOverState;
 
+    public Action OnScoreChange;
+
     public int score;
+
+    public bool playing;
 
     private void Awake()
     {
@@ -25,6 +30,7 @@ public class GameManager : MonoBehaviour
     public void AddScore(int ammount)
     {
         score += ammount;
+        OnScoreChange();
     }
 
     private void SingletonSetup()

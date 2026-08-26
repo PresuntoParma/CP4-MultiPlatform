@@ -11,12 +11,12 @@ public class MenuState : IGameStates
 
     public void Enter()
     {
-
+        SceneManager.LoadScene("MenuScene");
     }
 
     public void Exit()
     {
-        SceneManager.LoadScene("GameScene");
+        
     }
 
     public void FixedTick()
