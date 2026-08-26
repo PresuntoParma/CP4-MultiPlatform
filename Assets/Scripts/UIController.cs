@@ -7,7 +7,7 @@ public class UIController : MonoBehaviour
 
     private void Start()
     {
-        GameManager.instance.OnScoreChange += UpdateScore;
+        GameManager.instance.OnScoreChange = UpdateScore;
     }
 
     public void UpdateScore()
