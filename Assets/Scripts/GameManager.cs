@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour
         StateMachineSetup();
     }
 
+    private void Start()
+    {
+        machine.ChangeState(menuState);
+    }
+
     public void AddScore(int ammount)
     {
         score += ammount;
@@ -39,5 +44,10 @@ public class GameManager : MonoBehaviour
         menuState = new MenuState(this);
         gameState = new GameState(this);
         gameOverState = new GameOverState(this);
+    }
+
+    public void StartGame()
+    {
+        machine.ChangeState(gameState);
     }
 }

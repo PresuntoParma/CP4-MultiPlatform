@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuState : IGameStates
 {
@@ -15,7 +16,7 @@ public class MenuState : IGameStates
 
     public void Exit()
     {
-
+        SceneManager.LoadScene("GameScene");
     }
 
     public void FixedTick()
